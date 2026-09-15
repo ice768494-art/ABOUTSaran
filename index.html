@@ -3,100 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050816">
+  <meta name="description" content="Saran - Developer Portfolio">
   <title>Saran | Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="bg"></div>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+  <div class="stars"></div>
 
-  <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+  <main class="page">
+    <section class="glass-card">
 
-  <main class="card">
-    <img src="profile.jpg" alt="Profile" class="profile">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span>🌙</span><span>☀️</span>
+      </button>
 
-    <h1>Saran</h1>
-    <div id="typingText" class="typing"></div>
+      <header class="hero">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <img src="profile.jpg" alt="Saran profile" class="avatar"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div class="avatar-fallback">S</div>
+        </div>
 
-    <section class="box">
-      <h2>👋 About Me</h2>
-      <p>I'm a beginner developer who loves building websites, Python projects and Telegram bots.</p>
-      <p>🚀 Currently learning and building new projects.</p>
+        <h1><span class="terminal-icon">›_</span> Saran <span class="wave">👋</span></h1>
+        <div class="typing-line">
+          <span>💻</span>
+          <span id="typingText">Web Developer</span>
+          <span class="cursor">|</span>
+        </div>
+      </header>
+
+      <section class="about-box reveal">
+        <h2>💬 <span>About Me</span></h2>
+        <p>Hi I'm Saran 👋</p>
+        <p>I Like Creating New Things 🚀<br>and exploring technology 💻.</p>
+        <p>I'd Like to Watch Animes 🎬,<br>Visited This World On March 15 ✨<br>Studying Grade 12 🧠.</p>
+        <p>Thanks for visiting my page! ❤️</p>
+      </section>
+
+      <section class="project-card reveal">
+        <div class="project-top">
+          <span class="live-dot"></span>
+          <span>Currently Building</span>
+          <a href="https://about-me-ebon-sigma.vercel.app/" target="_blank" rel="noopener" aria-label="Open project">↗</a>
+        </div>
+
+        <div class="project-art">
+          <div class="moon"></div>
+          <div class="mountain mountain-a"></div>
+          <div class="mountain mountain-b"></div>
+          <div class="project-content">
+            <h2>🔥 AnimeNetworkTamil</h2>
+            <p>Anime • Tamil Dub • Web Project</p>
+            <a class="project-btn" href="https://about-me-ebon-sigma.vercel.app/" target="_blank" rel="noopener">
+              🚀 View Project <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="links reveal" aria-label="Social links">
+        <a class="link-card telegram" href="https://t.me/AboutShinchanTamil" target="_blank" rel="noopener">
+          <span class="link-icon">✈️</span>
+          <span><b>Telegram</b><small>Join my Telegram channel</small></span>
+          <strong>🚀 ›</strong>
+        </a>
+
+        <a class="link-card instagram" href="https://www.instagram.com/saran._95._" target="_blank" rel="noopener">
+          <span class="link-icon">📸</span>
+          <span><b>Instagram</b><small>Follow me on Instagram</small></span>
+          <strong>✨ ›</strong>
+        </a>
+
+        <a class="link-card youtube" href="https://youtube.com/@animenetworktamil95" target="_blank" rel="noopener">
+          <span class="link-icon">▶️</span>
+          <span><b>YouTube</b><small>Subscribe to my channel</small></span>
+          <strong>🔥 ›</strong>
+        </a>
+
+        <a class="link-card website" href="https://about-me-ebon-sigma.vercel.app/" target="_blank" rel="noopener">
+          <span class="link-icon">🌐</span>
+          <span><b>My Website</b><small>Explore more about me</small></span>
+          <strong>🌟 ›</strong>
+        </a>
+      </nav>
+
+      <footer>Made By Me ❤️ <i>•</i> <span id="year"></span></footer>
     </section>
-
-    <section class="project">
-      <span class="badge">🚀 CURRENTLY BUILDING</span>
-      <h2>AnimeNetworkTamil</h2>
-      <p>A Tamil anime project with a clean web interface and Telegram integration.</p>
-      <a href="https://t.me/AboutShinchanTamil" target="_blank" rel="noopener">Join Telegram →</a>
-    </section>
-
-    <div class="links">
-      <a href="https://t.me/AboutShinchanTamil" target="_blank" rel="noopener">✈️ Telegram</a>
-      <a href="https://www.instagram.com/saran._95._" target="_blank" rel="noopener">📸 Instagram</a>
-      <a href="https://youtube.com/@animenetworktamil95" target="_blank" rel="noopener">▶️ YouTube</a>
-      <a href="https://github.com/ice768494-art/My-Web" target="_blank" rel="noopener">💻 GitHub</a>
-      <a href="https://about-me-ebon-sigma.vercel.app/" target="_blank" rel="noopener">🌐 My Website</a>
-    </div>
-
-    <footer>Made by Saran ❤️ · <span id="year"></span></footer>
   </main>
 
-  <script>
-    const typingText = document.getElementById("typingText");
-    const texts = [
-      "💻 Web Developer",
-      "🐍 Python Developer",
-      "🤖 Telegram Bot Developer",
-      "🚀 Full-Stack Learner"
-    ];
-
-    let textIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeEffect() {
-      const text = texts[textIndex];
-
-      if (!deleting) {
-        typingText.textContent = text.slice(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === text.length) {
-          deleting = true;
-          setTimeout(typeEffect, 1600);
-          return;
-        }
-      } else {
-        typingText.textContent = text.slice(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          deleting = false;
-          textIndex = (textIndex + 1) % texts.length;
-        }
-      }
-
-      setTimeout(typeEffect, deleting ? 45 : 85);
-    }
-
-    typeEffect();
-
-    const themeToggle = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "light") {
-      document.body.classList.add("light");
-      themeToggle.textContent = "☀️";
-    }
-
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      const light = document.body.classList.contains("light");
-      themeToggle.textContent = light ? "☀️" : "🌙";
-      localStorage.setItem("theme", light ? "light" : "dark");
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
