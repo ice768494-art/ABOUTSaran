@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saran | Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+
+  <main class="card">
+    <img src="profile.jpg" alt="Profile" class="profile">
+
+    <h1>Saran</h1>
+    <div id="typingText" class="typing"></div>
+
+    <section class="box">
+      <h2>👋 About Me</h2>
+      <p>I'm a beginner developer who loves building websites, Python projects and Telegram bots.</p>
+      <p>🚀 Currently learning and building new projects.</p>
+    </section>
+
+    <section class="project">
+      <span class="badge">🚀 CURRENTLY BUILDING</span>
+      <h2>AnimeNetworkTamil</h2>
+      <p>A Tamil anime project with a clean web interface and Telegram integration.</p>
+      <a href="https://t.me/AboutShinchanTamil" target="_blank" rel="noopener">Join Telegram →</a>
+    </section>
+
+    <div class="links">
+      <a href="https://t.me/AboutShinchanTamil" target="_blank" rel="noopener">✈️ Telegram</a>
+      <a href="https://www.instagram.com/saran._95._" target="_blank" rel="noopener">📸 Instagram</a>
+      <a href="https://youtube.com/@animenetworktamil95" target="_blank" rel="noopener">▶️ YouTube</a>
+      <a href="https://github.com/ice768494-art/My-Web" target="_blank" rel="noopener">💻 GitHub</a>
+      <a href="https://about-me-ebon-sigma.vercel.app/" target="_blank" rel="noopener">🌐 My Website</a>
+    </div>
+
+    <footer>Made by Saran ❤️ · <span id="year"></span></footer>
+  </main>
+
+  <script>
+    const typingText = document.getElementById("typingText");
+    const texts = [
+      "💻 Web Developer",
+      "🐍 Python Developer",
+      "🤖 Telegram Bot Developer",
+      "🚀 Full-Stack Learner"
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const text = texts[textIndex];
+
+      if (!deleting) {
+        typingText.textContent = text.slice(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === text.length) {
+          deleting = true;
+          setTimeout(typeEffect, 1600);
+          return;
+        }
+      } else {
+        typingText.textContent = text.slice(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          deleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+        }
+      }
+
+      setTimeout(typeEffect, deleting ? 45 : 85);
+    }
+
+    typeEffect();
+
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light");
+      themeToggle.textContent = "☀️";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const light = document.body.classList.contains("light");
+      themeToggle.textContent = light ? "☀️" : "🌙";
+      localStorage.setItem("theme", light ? "light" : "dark");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
